@@ -11,17 +11,28 @@ namespace QuizGrader
         // Samoa
         // Guam
         // Australia
+        // NZ stands for New Zoo (T/F)
 
         public string Prompt { get; set; }
-        public List<string> Options { get; set; }
+        public List<string> Options { get; set; }        
 
-        // NZ stands for New Zoo (T/F)
         public Question(string prompt, List<string> options)
         {
             Prompt = prompt;
             Options = options;
         }
 
-        public abstract bool GradeQuestion(List<string> userResponse);
+        public void PromptQuestion()
+        {
+            // Display Prompt
+            Console.WriteLine(Prompt);
+            // Display each option in the Options list
+            foreach (string option in Options)
+            {
+                Console.WriteLine(option);
+            }
+        }
+
+        public abstract bool GradeQuestion();
     }
 }

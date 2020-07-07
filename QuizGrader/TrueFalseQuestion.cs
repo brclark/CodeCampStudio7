@@ -6,6 +6,7 @@ namespace QuizGrader
     public class TrueFalseQuestion : Question
     {
         public string CorrectAnswer { get; set; }
+        public string UserResponse { get; set; }
 
         // Create overloaded constructor for this subclass of Question
         /*
@@ -16,8 +17,17 @@ namespace QuizGrader
             : base(prompt, new List<string>() { "True", "False" })
         {
             CorrectAnswer = correctAnswer;
+            UserResponse = "";
         }
 
         // Implement GradeQuestion method
+        public override bool GradeQuestion()
+        {
+            Console.WriteLine("Your answer:");
+
+            UserResponse = Console.ReadLine();
+
+            return UserResponse.Equals(CorrectAnswer);
+        }
     }
 }
