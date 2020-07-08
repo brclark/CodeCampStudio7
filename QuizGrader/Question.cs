@@ -25,6 +25,7 @@ namespace QuizGrader
         public void PromptQuestion()
         {
             // Display Prompt
+            return;
             Console.WriteLine(Prompt);
             // Display each option in the Options list
             foreach (string option in Options)

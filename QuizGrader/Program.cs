@@ -19,7 +19,6 @@ namespace QuizGrader
             newQuiz.AddQuestion(q2);
 
 
-
             newQuiz.Administer();
         }
     }

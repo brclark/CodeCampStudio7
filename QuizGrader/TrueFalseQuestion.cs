@@ -23,9 +23,12 @@ namespace QuizGrader
         // Implement GradeQuestion method
         public override bool GradeQuestion()
         {
-            Console.WriteLine("Your answer:");
+            while (UserResponse != null)
+            {
+                Console.WriteLine("Your answer:");
 
-            UserResponse = Console.ReadLine();
+                UserResponse = Console.ReadLine();
+            }
 
             return UserResponse.Equals(CorrectAnswer);
         }
